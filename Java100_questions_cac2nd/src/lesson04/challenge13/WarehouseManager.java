@@ -63,32 +63,45 @@ public class WarehouseManager {
 
 	public static void main(String[] args) throws IOException {
 
+		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+		String[] misakio = { "「へい！らっしゃい！！」", "「何にしますか！今日は活きのいいコハダが入ってますよ」", "「まいどあり！！またどうぞ」" };
 
 		//配列の宣言および初期化処理を記述する
-
 
 		System.out.println("Yさん：");
 		System.out.println("まず、MISAKI○の今の状態を確かめようかな。\n");
 
-
-		//三つのあいさつパターンの出力処理を記述する
-
+		for (int i = 0; i < misakio.length; i++) {
+			System.out.println(misakio[i]);
+		} //三つのあいさつパターンの出力処理を記述する
 
 		System.out.println("Yさん：");
 		System.out.println("うわぁ～。どれか変更しよう。\n");
 
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		System.out.print("どのパターンを変更しますか？");
+		String str = reader.readLine();
+		int index = Integer.parseInt(str);
 
+		if (index == 1) {
+			System.out.print("あいさつを吹き込んでください");
+			misakio[index - 1] = str = reader.readLine();
+		} else if (index == 2) {
+			System.out.print("あいさつを吹き込んでください");
+			misakio[index - 1] = str = reader.readLine();
+		} else {
+			System.out.print("あいさつを吹き込んでください");
+			misakio[index - 1] = str = reader.readLine();
+		}
 
 		//入力処理および入力値の代入処理
-
 
 		System.out.println("\nYさん：");
 		System.out.println("よし。もう一度確かめてみよう。\n");
 
-
-		//三つのあいさつパターンの出力処理を記述する
-
+		for (int i = 0; i < misakio.length; i++) {
+			System.out.println(misakio[i]);
+		} //三つのあいさつパターンの出力処理を記述する
 
 		System.out.println("Yさん：");
 		System.out.println("まあ少しはマシになったかな。");

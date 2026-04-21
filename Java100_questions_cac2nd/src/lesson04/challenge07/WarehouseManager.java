@@ -36,15 +36,40 @@
 
 package lesson04.challenge07;
 
+import java.util.Arrays;
+
 public class WarehouseManager {
 
 	public static void main(String[] args) {
 
 		int[] ABKosanArray = new int[5];
 
+		for (int i = 0; i < ABKosanArray.length; i++) {
+			ABKosanArray[i] = 0;
+		}
 
-		//ここに重複チェックおよび値の代入処理を記述する
+		//ここに配列の宣言を記述する
 
+		int intputNum = 0;
+		boolean loopFlag = false;
+		int i = 0;
+
+		while (!loopFlag) {
+			intputNum = (int) (Math.random() * 5);
+			if (ABKosanArray[intputNum] == 0) {
+				ABKosanArray[intputNum] = i + 1;
+				i++;
+			}
+
+			loopFlag = true;
+			for (int j = 0; j < ABKosanArray.length; j++) {
+				if (ABKosanArray[j] == 0) {
+					loopFlag = false;
+					break;
+				}
+			}
+
+		} //ここに重複チェックおよび値の代入処理を記述する
 
 		System.out.println("E主任：");
 		System.out.println("AB興産の荷物の並べ替えをお願いします。\n");
@@ -53,35 +78,36 @@ public class WarehouseManager {
 		System.out.println("はい、");
 		System.out.println("並べ替え前の状態は、");
 
-		for (int i = 0; i < ABKosanArray.length; i++) {
-			System.out.print(ABKosanArray[i]);
-			if (i != (ABKosanArray.length - 1)) {
+		for (int j = 0; j < ABKosanArray.length; j++) {
+			System.out.print(ABKosanArray[j]);
+			if (j != (ABKosanArray.length - 1)) {
 				System.out.print(",");
 			}
 		}
 		System.out.println("\nです。\n");
 
-
-		//ここに昇順にソートする処理を記述する
-
+		Arrays.sort(ABKosanArray);//ここに昇順にソートする処理を記述する
 
 		System.out.println("小さい順に並べ替えた後の状態は、");
-		for (int i = 0; i < ABKosanArray.length; i++) {
-			System.out.print(ABKosanArray[i]);
-			if (i != (ABKosanArray.length - 1)) {
+		for (int j = 0; j < ABKosanArray.length; j++) {
+			System.out.print(ABKosanArray[j]);
+			if (j != (ABKosanArray.length - 1)) {
 				System.out.print(",");
 			}
 		}
 		System.out.println("\nです。\n");
 
+		for (int j = 0, temp = 0; j < ABKosanArray.length / 2; j++) {
+			temp = ABKosanArray[j];
+			ABKosanArray[j] = ABKosanArray[ABKosanArray.length - 1 - j];
+			ABKosanArray[ABKosanArray.length - 1 - j] = temp;
 
-		//ここに降順にソートする処理を記述する
-
+		} //ここに降順にソートする処理を記述する
 
 		System.out.println("大きい順に並べ替えた後の状態は、");
-		for (int i = 0; i < ABKosanArray.length; i++) {
-			System.out.print(ABKosanArray[i]);
-			if (i != (ABKosanArray.length - 1)) {
+		for (int j = 0; j < ABKosanArray.length; j++) {
+			System.out.print(ABKosanArray[j]);
+			if (j != (ABKosanArray.length - 1)) {
 				System.out.print(",");
 			}
 		}

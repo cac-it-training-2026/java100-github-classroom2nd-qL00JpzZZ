@@ -39,9 +39,32 @@ public class WarehouseManager {
 
 		int[] ABKosanArray = new int[5];
 
+		for (int i = 0; i < ABKosanArray.length; i++) {
+			ABKosanArray[i] = 0;
+		}
 
-		//ここに重複チェックおよび値の代入処理を記述する
+		//ここに配列の宣言を記述する
 
+		int intputNum = 0;
+		boolean loopFlag = false;
+		int i = 0;
+
+		while (!loopFlag) {
+			intputNum = (int) (Math.random() * 5);
+			if (ABKosanArray[intputNum] == 0) {
+				ABKosanArray[intputNum] = i + 1;
+				i++;
+			}
+
+			loopFlag = true;
+			for (int j = 0; j < ABKosanArray.length; j++) {
+				if (ABKosanArray[j] == 0) {
+					loopFlag = false;
+					break;
+				}
+			}
+
+		} //ここに重複チェックおよび値の代入処理を記述する
 
 		System.out.println("E主任：");
 		System.out.println("AB興産の荷物の入れ替えをお願いします。\n");
@@ -49,22 +72,48 @@ public class WarehouseManager {
 		System.out.println("Yさん：");
 		System.out.println("はい、");
 		System.out.println("入れ替え前の状態は、");
-		for (int i = 0; i < ABKosanArray.length; i++) {
-			System.out.print(ABKosanArray[i]);
-			if (i != (ABKosanArray.length - 1)) {
+		for (int j = 0; j < ABKosanArray.length; j++) {
+			System.out.print(ABKosanArray[j]);
+			if (j != (ABKosanArray.length - 1)) {
 				System.out.print(",");
 			}
 		}
 		System.out.println("\nです。\n");
 
+		int idx1 = -1;
+		int idx3 = -1;
+
+		for (int j = 0; j < ABKosanArray.length; j++) {
+			if (ABKosanArray[j] == 1)
+				idx1 = j;
+			if (ABKosanArray[j] == 3)
+				idx3 = j;
+		}
+
+		int temp = ABKosanArray[idx1];
+		ABKosanArray[idx1] = ABKosanArray[idx3];
+		ABKosanArray[idx3] = temp;
+
+		int idx2 = -1;
+		int idx4 = -1;
+
+		for (int j = 0; j < ABKosanArray.length; j++) {
+			if (ABKosanArray[j] == 2)
+				idx2 = j;
+			if (ABKosanArray[j] == 4)
+				idx4 = j;
+		}
+
+		temp = ABKosanArray[idx2];
+		ABKosanArray[idx2] = ABKosanArray[idx4];
+		ABKosanArray[idx4] = temp;
 
 		//ここに値の入れ替え処理を記述する
 
-
 		System.out.println("入れ替え後の状態は、");
-		for (int i = 0; i < ABKosanArray.length; i++) {
-			System.out.print(ABKosanArray[i]);
-			if (i != (ABKosanArray.length - 1)) {
+		for (int j = 0; j < ABKosanArray.length; j++) {
+			System.out.print(ABKosanArray[j]);
+			if (j != (ABKosanArray.length - 1)) {
 				System.out.print(",");
 			}
 		}
