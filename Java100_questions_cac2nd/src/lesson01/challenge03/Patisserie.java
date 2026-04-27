@@ -29,7 +29,5 @@ public class Patisserie {
 		System.out.println("シトロン　　　￥250 ・・・ 残り" + citron + "個");
 		System.out.println("ショコラ　　　￥280 ・・・ 残り" + chocolate + "個");
 		System.out.println("ビスタージュ　￥320 ・・・ 残り" + vistage + "個");
-
 	}
-
 }

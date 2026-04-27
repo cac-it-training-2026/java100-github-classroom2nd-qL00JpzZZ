@@ -20,6 +20,7 @@ package lesson01.challenge02;
 
 public class Patisserie {
 	public static void main(String[] args) {
+
 		int sitron = 250;
 		int syocora = 280;
 		int bistazyu = 320;
@@ -32,7 +33,5 @@ public class Patisserie {
 		System.out.println("シトロン　　　￥" + sitron);
 		System.out.println("ショコラ　　　￥" + syocora);
 		System.out.println("ビスタージュ　￥" + bistazyu);
-
 	}
-
 }
