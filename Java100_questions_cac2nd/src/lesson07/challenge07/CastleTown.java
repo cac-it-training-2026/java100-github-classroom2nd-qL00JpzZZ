@@ -26,42 +26,78 @@
 package lesson07.challenge07;
 
 class Samurai {
+	/**
+	 * @param name
+	 */
+	public Samurai(String name) {
+		this.name = name;
+	}
 
+	/**
+	 * @param name セットする name
+	 */
 
-    //ここにフィールドnameを記述
+	protected String name;
 
+	//ここにフィールドnameを記述
 
-    void fight() {
-        System.out.println("戦うよ～。");
-    }
+	void fight() {
+		System.out.println("戦うよ～。");
+	}
 
-    void work() {
-        System.out.println("何かして働くよ～");
-    }
+	void work() {
+		System.out.println("何かして働くよ～");
+	}
 
 }
 
+class Retainer extends Samurai {
+	/**
+	 * 
+	 */
+	public Retainer(String name) {
+		super(name);
+		// TODO 自動生成されたコンストラクター・スタブ
+	}
+
+	public String toString() {
+		System.out.println("拙者は○△□藩士、" + name + "ともうす。");
+		return name;
+	}
+}
 
 //ここにRetainerクラスを記述
+class Ronin extends Retainer {
+	/**
+	 * @param name
+	 */
+	public Ronin(String name) {
+		super(name);
+		// TODO 自動生成されたコンストラクター・スタブ
+	}
 
+	public String toString() {
+		System.out.println("拙者は武州○△□村の浪人、" + name + "ともうす。");
+		return name;
+	}
 
+}
 //ここにRoninクラスを記述
-
 
 public class CastleTown {
 
-    public static void main(String[] args) {
-        System.out.println("藩士クラスのtoString()メソッドを確認します。\n");
+	public static void main(String[] args) {
+		System.out.println("藩士クラスのtoString()メソッドを確認します。\n");
 
+		Retainer ri = new Retainer("テスト兵衛");
 
-        //ここに適切な処理を記述
+		ri.toString();//ここに適切な処理を記述
 
+		System.out.println("\n浪人クラスのtoString()メソッドを確認します。\n");
 
-        System.out.println("\n浪人クラスのtoString()メソッドを確認します。\n");
+		Ronin ronin = new Ronin("テスト太郎");
 
+		ronin.toString();//ここに適切な処理を記述
 
-        //ここに適切な処理を記述
-
-
-    }
+	}
 }

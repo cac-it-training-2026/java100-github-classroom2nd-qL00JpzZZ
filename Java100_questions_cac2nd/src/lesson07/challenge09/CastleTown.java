@@ -31,40 +31,77 @@ package lesson07.challenge09;
 
 class Samurai {
 
-    protected String name;
+	/**
+	 * @param name
+	 */
 
-    void fight() {
-        System.out.println("戦うよ～。");
-    }
+	protected String name;
 
-    void work() {
-        System.out.println("何かして働くよ～");
-    }
+	void fight() {
+		System.out.println("戦うよ～。");
+	}
+
+	void work() {
+		System.out.println("何かして働くよ～");
+	}
 
 }
 
+class Retainer extends Samurai {
+
+	/**
+	 * 
+	 */
+	public Retainer() {
+		super();
+		// TODO 自動生成されたコンストラクター・スタブ
+	}
+
+}
+
+class Ronin extends Samurai {
+
+	/**
+	 * 
+	 */
+	public Ronin() {
+		super();
+		// TODO 自動生成されたコンストラクター・スタブ
+	}
+
+}
 
 //ここにRetainerクラスを記述
 
-
 //ここにRoninクラスを記述
-
 
 public class CastleTown {
 
-    public static void main(String[] args) {
-        System.out.println("5人の侍を配列に詰めます。\n");
+	public static void main(String[] args) {
+		System.out.println("5人の侍を配列に詰めます。\n");
 
+		Samurai[] sm = new Samurai[5];
+		int flag = 0;
 
-        //ここに適切な処理を記述
+		for (int i = 0; i < sm.length; i++) {
+			flag = (int) (Math.random() * 2) + 1;
+			if (flag > 1) {
+				sm[i] = new Retainer();
+			} else {
+				sm[i] = new Ronin();
+			}
+		}
 
+		//ここに適切な処理を記述
 
-        System.out.println("詰め終わりました。\n");
-        System.out.println("それぞれ表示してみます。\n");
+		System.out.println("詰め終わりました。\n");
+		System.out.println("それぞれ表示してみます。\n");
 
+		for (int i = 0; i < sm.length; i++) {
+			System.out.println(sm[i].getClass());
+		}
 
-        //ここに適切な処理を記述
+		//ここに適切な処理を記述
 
-
-    }
+	}
 }
