@@ -24,36 +24,54 @@
 
 package lesson07.challenge10;
 
-
 //ここにSamuraiクラスを記述
+abstract class Samurai {
+	abstract void work();
+}
 
+class Retainer extends Samurai {
+	@Override
+	void work() {
+		// TODO 自動生成されたメソッド・スタブ
+		System.out.println("年貢を取り立てるよ～。");
+	}
+}
 
 //ここにRetainerクラスを記述
-
+class Ronin extends Samurai {
+	@Override
+	void work() {
+		// TODO 自動生成されたメソッド・スタブ
+		System.out.println("傘張るよ～。");
+	}
+}
 
 //ここにRoninクラスを記述
 
-
 public class CastleTown {
 
-    public static void main(String[] args) {
-        System.out.println("侍は働きます。");
+	public static void main(String[] args) {
+		System.out.println("侍は働きます。");
 
-        System.out.println("\n具体的に言うと藩士は年貢を取り立てます。\n");
+		System.out.println("\n具体的に言うと藩士は年貢を取り立てます。\n");
 
-        System.out.println("藩士1：");
+		System.out.println("藩士1：");
 
+		Retainer rt = new Retainer();
 
-        //ここに適切な処理を記述
+		rt.work();
 
+		//ここに適切な処理を記述
 
-        System.out.println("\n具体的に言うと浪人は傘張りをします。\n");
+		System.out.println("\n具体的に言うと浪人は傘張りをします。\n");
 
-        System.out.println("浪人1：");
+		System.out.println("浪人1：");
 
+		Ronin rn = new Ronin();
 
-        //ここに適切な処理を記述
+		rn.work();
 
+		//ここに適切な処理を記述
 
-    }
+	}
 }

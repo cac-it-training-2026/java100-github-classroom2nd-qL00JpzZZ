@@ -98,10 +98,20 @@ public class WarehouseManager {
 		}
 
 		System.out.println("\n\nでした。直してきます...\n");
+		int max = 15;
+		int checkFlag = 0;
 
+		for (int i = 0; i < wonderfulArray.length; i++) {
+			checkFlag += wonderfulArray[i];
+		}
 
-		//ここに適切な値の挿入処理を記述する
+		checkFlag = max - checkFlag;
 
+		for (int i = 0; i < wonderfulArray.length; i++) {
+			if (wonderfulArray[i] == 0) {
+				wonderfulArray[i] = checkFlag;
+			}
+		} //ここに適切な値の挿入処理を記述する
 
 		System.out.println("Yさん：");
 		System.out.println("直してきました。\n");

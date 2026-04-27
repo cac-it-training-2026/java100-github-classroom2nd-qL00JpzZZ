@@ -18,34 +18,44 @@
 package lesson06.challenge04;
 
 class Spaceship {
-    private int air;
-    private int fuel;
+	/**
+	 * @param air
+	 * @param fuel
+	 */
+	public Spaceship(int air, int fuel) {
+		this.air = air;
+		this.fuel = fuel;
+	}
 
-    //ここに適切な処理を記述する。
+	private int air;
+	private int fuel;
 
-    public int getFuel() {
-        return fuel;
-    }
+	//ここに適切な処理を記述する。
 
-    public void setFuel(int fuel) {
-        this.fuel = fuel;
-    }
+	public int getFuel() {
+		return fuel;
+	}
 
-    public int getAir() {
-        return air;
-    }
+	public void setFuel(int fuel) {
+		this.fuel = fuel;
+	}
 
-    public void setAir(int air) {
-        this.air = air;
-    }
+	public int getAir() {
+		return air;
+	}
+
+	public void setAir(int air) {
+		this.air = air;
+	}
 
 }
 
 public class Astronaut {
 
-    public static void main(String[] args) {
+	public static void main(String[] args) {
 
-        //ここに適切な処理を記述する。
-
-    }
+		Spaceship spaceship = new Spaceship(10, 10);
+		System.out.println("空気の初期値は" + spaceship.getAir() + "リットルです。");//ここに適切な処理を記述する。
+		System.out.println("燃料の初期値は" + spaceship.getFuel() + "ガロンです。");
+	}
 }

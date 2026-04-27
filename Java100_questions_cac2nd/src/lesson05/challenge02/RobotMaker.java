@@ -44,35 +44,81 @@ package lesson05.challenge02;
 //ここに問題1で作成したクラスに次の条件を足したクラスを作成してください。
 //フィールド名：name(String型)
 
+class Robot {
+	/**
+	 * @param energy
+	 * @param name
+	 */
+	public Robot(int energy, String name) {
+		this.energy = energy;
+		this.name = name;
+	}
+
+	private int energy;
+	private String name;
+
+	/**
+	 * @return name
+	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * @param name セットする name
+	 */
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	/**
+	 * @return energy
+	 */
+	public int getEnergy() {
+		return energy;
+	}
+
+	/**
+	 * @param energy セットする energy
+	 */
+	public void setEnergy(int energy) {
+		this.energy = energy;
+	}
+
+}
+
 public class RobotMaker {
 
-    public static void main(String[] args) {
+	public static void main(String[] args) {
 
-        System.out.println("G博士：");
-        System.out.println("ようし試作機がうまく行ったから増やすぞ！\n");
-        System.out.println("Rさん：");
-        System.out.println("何体つくりますか？\n");
-        System.out.println("G博士：");
-        System.out.println("3体じゃ。それぞれ「RF1」「RF2」「RF3」と名付ける！\n");
-        System.out.println("Rさん：");
-        System.out.println("安易ですね。\n");
-        System.out.println("G博士：");
-        System.out.println("なんか言ったか？\n");
-        System.out.println("Rさん：");
-        System.out.println("いえ、何にも......はい、3体作って名前を付けましたよ。\n");
+		System.out.println("G博士：");
+		System.out.println("ようし試作機がうまく行ったから増やすぞ！\n");
+		System.out.println("Rさん：");
+		System.out.println("何体つくりますか？\n");
+		System.out.println("G博士：");
+		System.out.println("3体じゃ。それぞれ「RF1」「RF2」「RF3」と名付ける！\n");
+		System.out.println("Rさん：");
+		System.out.println("安易ですね。\n");
+		System.out.println("G博士：");
+		System.out.println("なんか言ったか？\n");
+		System.out.println("Rさん：");
+		System.out.println("いえ、何にも......はい、3体作って名前を付けましたよ。\n");
 
-        //ここにRobotクラスのインスタンスを３つ作り、
-        //（インスタンス名はrobot1、robot2、robot3）
-        //それぞれ名前を代入する処理を記述する。
+		//ここにRobotクラスのインスタンスを３つ作り、
+		//（インスタンス名はrobot1、robot2、robot3）
+		//それぞれ名前を代入する処理を記述する。
+		Robot robot1 = new Robot(10, "RF1");
+		Robot robot2 = new Robot(10, "RF2");
+		Robot robot3 = new Robot(10, "RF3");
 
-        System.out.println("G博士：");
-        System.out.println("よし、では確認にため2番目のロボットの中を覗いてみよう。\n");
+		System.out.println("G博士：");
+		System.out.println("よし、では確認にため2番目のロボットの中を覗いてみよう。\n");
 
-        //ここに2番目のインスタンスの名前を表示する処理を記述する
+		System.out.println(robot2.getName() + "\n");//ここに2番目のインスタンスの名前を表示する処理を記述する
 
-        System.out.println("G博士：");
-        System.out.println("OKじゃ。\n");
+		System.out.println("G博士：");
+		System.out.println("OKじゃ。\n");
 
-    }
+	}
 
 }

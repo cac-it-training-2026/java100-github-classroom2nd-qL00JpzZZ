@@ -68,6 +68,7 @@ import java.io.InputStreamReader;
 public class WarehouseManager {
 
 	public static void main(String[] args) throws IOException {
+		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
 		System.out.println("Z先輩：");
 		System.out.println("それではこれより新人研修の第3回目を始めます。\n");
@@ -92,15 +93,17 @@ public class WarehouseManager {
 
 		System.out.print("要素数を入れてください＞");
 
+		String str = reader.readLine();
+		int Number_elements = Integer.parseInt(str);
 
-		//ここに入力処理を記述する
-
+		String[] ans = new String[Number_elements];//ここに入力処理を記述する
 
 		//ここに配列宣言を記述する
-
+		for (int i = 0; i < Number_elements; i++) {
+			ans[i] = reader.readLine();
+		}
 
 		//ここに値の入力+代入処理を記述する（for文）
-
 
 		System.out.println("\nYさん：");
 		System.out.println("...出来ました。\n");
@@ -110,9 +113,9 @@ public class WarehouseManager {
 
 		System.out.println("Yさん：");
 
-
-		//ここに配列の値の出力処理を記述する（for文）
-
+		for (int i = 0; i < ans.length; i++) {
+			System.out.println(ans[i]);//ここに配列の値の出力処理を記述する（for文）
+		}
 
 		System.out.println("です。\n");
 

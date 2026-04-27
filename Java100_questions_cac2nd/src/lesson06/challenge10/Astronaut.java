@@ -31,30 +31,36 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-
 //ここにBetalianクラスを記述する
+class Betalian {
+	public String length(String str) {
+		if (str.length() > 5) {
 
+			str = str.substring(0, str.length() - 1);
+			return str;
+		} else {
+			return str;
+		}
+	}
+}
 
 public class Astronaut {
 
-    public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws IOException {
 
-        System.out.print("β星人にアイテムを渡してください＞");
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        String present = br.readLine();
+		System.out.print("β星人にアイテムを渡してください＞");
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		String present = br.readLine();
 
+		//ここに適切な処理を記述する
+		Betalian beta = new Betalian();
 
-        //ここに適切な処理を記述する
+		String item = null;
+		item = beta.length(present);
+		//ここに適切な処理を記述する
 
-
-        String item = null;
-
-
-        //ここに適切な処理を記述する
-
-
-        System.out.println("\nβ星人：");
-        System.out.println("ありがとうベータ！");
-        System.out.println("この" + item + "大事にするベータ。");
-    }
+		System.out.println("\nβ星人：");
+		System.out.println("ありがとうベータ！");
+		System.out.println("この" + item + "大事にするベータ。");
+	}
 }
